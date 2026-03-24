@@ -377,8 +377,12 @@ select {
 .memory-card.hidden {
   color: #fff8ee;
   background:
-    linear-gradient(155deg, rgba(255, 255, 255, 0.08), transparent 50%),
-    linear-gradient(135deg, #22303a 0%, #314754 100%);
+    linear-gradient(180deg, rgba(11, 10, 12, 0.18), rgba(11, 10, 12, 0.58)),
+    url("assets/Thiel.jpg") center 22% / cover no-repeat;
+  border-color: rgba(255, 248, 238, 0.16);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 248, 238, 0.08),
+    0 16px 30px rgba(17, 12, 10, 0.22);
 }
 
 .memory-card.hidden::before,
@@ -391,15 +395,20 @@ select {
 
 .memory-card.hidden::before {
   background:
-    linear-gradient(90deg, transparent 0, transparent 42%, rgba(200, 159, 86, 0.18) 42%, rgba(200, 159, 86, 0.18) 58%, transparent 58%, transparent 100%),
-    linear-gradient(0deg, transparent 0, transparent 42%, rgba(200, 159, 86, 0.18) 42%, rgba(200, 159, 86, 0.18) 58%, transparent 58%, transparent 100%);
-  opacity: 0.75;
+    radial-gradient(circle at 50% 18%, rgba(255, 232, 197, 0.14), transparent 36%),
+    linear-gradient(180deg, rgba(9, 8, 10, 0.08), rgba(9, 8, 10, 0.46));
+  opacity: 1;
 }
 
 .memory-card.hidden::after {
   inset: 12px;
   border-radius: 16px;
-  border: 1px solid rgba(255, 248, 238, 0.14);
+  border: 1px solid rgba(255, 248, 238, 0.18);
+}
+
+.memory-card.hidden .card-badge {
+  color: #fff8ee;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.42);
 }
 
 .memory-card.question,
