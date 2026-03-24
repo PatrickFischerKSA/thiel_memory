@@ -1,10 +1,14 @@
 (function () {
-  const cards = window.THIEL_MEMORY_CARDS || [];
-  const sources = window.THIEL_MEMORY_SOURCES || [];
-  const categories = ["Alle Themen", ...new Set(cards.map((card) => card.category))];
+  const levelDefinitions = window.THIEL_MEMORY_LEVELS || [];
+  const levelGuides = window.THIEL_MEMORY_LEVELS || [];
+  const levelPools = {
+    level1: window.THIEL_MEMORY_TEXT_CARDS || window.THIEL_MEMORY_CARDS || [],
+    level2: window.THIEL_MEMORY_INTERPRETATION_CARDS || []
+  };
   const playerColors = ["Signalrot", "Nebelblau", "Waldgrün", "Messinggelb"];
 
   const elements = {
+    levelSelect: document.getElementById("levelSelect"),
     playerCount: document.getElementById("playerCount"),
     pairCount: document.getElementById("pairCount"),
     categorySelect: document.getElementById("categorySelect"),
@@ -40,6 +44,7 @@
     activePairs: 0,
     history: [],
     lastMatch: null,
+    level: "level1",
     category: "Alle Themen",
     previewMode: false,
     lockBoard: false
@@ -54,11 +59,20 @@
     return copy;
   }
 
+  function getLevelMeta(levelId) {
+    return levelDefinitions.find((level) => level.id === levelId) || levelDefinitions[0] || { title: "Spiellevel" };
+  }
+
+  function getActivePool() {
+    return levelPools[state.level] || [];
+  }
+
   function getAvailableCards() {
+    const pool = getActivePool();
     if (state.category === "Alle Themen") {
-      return cards;
+      return pool;
     }
-    return cards.filter((card) => card.category === state.category);
+    return pool.filter((card) => card.category === state.category);
   }
 
   function buildDeck(selection) {
@@ -79,7 +93,7 @@
           uid: `${item.id}-answer`,
           pairId: item.id,
           faceType: "answer",
-          label: "Zitat",
+          label: state.level === "level2" ? "Antwort" : "Zitat",
           text: item.answer,
           category: item.category,
           sourcePage: item.sourcePage,
@@ -95,15 +109,23 @@
   }
 
   function getPairMeta(pairId) {
-    return cards.find((card) => card.id === pairId) || null;
+    return getActivePool().find((card) => card.id === pairId) || null;
+  }
+
+  function populateLevelSelect() {
+    elements.levelSelect.innerHTML = levelDefinitions
+      .filter((level) => level.id !== "hint")
+      .map((level) => `<option value="${escapeHtml(level.id)}">${escapeHtml(level.title)}</option>`)
+      .join("");
   }
 
   function populateCategorySelect() {
+    const categories = ["Alle Themen", ...new Set(getActivePool().map((card) => card.category))];
     elements.categorySelect.innerHTML = categories
       .map((category) => {
         const count = category === "Alle Themen"
-          ? cards.length
-          : cards.filter((card) => card.category === category).length;
+          ? getActivePool().length
+          : getActivePool().filter((card) => card.category === category).length;
         const value = category === "Alle Themen" ? "Alle Themen" : category;
         return `<option value="${escapeHtml(value)}">${escapeHtml(category)} (${count})</option>`;
       })
@@ -111,12 +133,11 @@
   }
 
   function renderSources() {
-    elements.sourceList.innerHTML = sources
+    elements.sourceList.innerHTML = levelGuides
       .map(
         (source) => `
           <article class="source-item">
             <h3>${escapeHtml(source.title)}</h3>
-            <p><strong>Datei:</strong> ${escapeHtml(source.file)}</p>
             <p>${escapeHtml(source.note)}</p>
           </article>
         `
@@ -145,10 +166,12 @@
 
   function startGame() {
     closeZoom();
+    const selectedLevel = elements.levelSelect.value;
     const selectedCategory = elements.categorySelect.value;
     const playerCount = Number(elements.playerCount.value);
     const requestedPairs = Number(elements.pairCount.value);
 
+    state.level = selectedLevel;
     state.category = selectedCategory;
     const availableCards = shuffle(getAvailableCards());
     const actualPairs = Math.min(requestedPairs, availableCards.length);
@@ -170,7 +193,7 @@
     updateSetupHint(requestedPairs, actualPairs, availableCards.length);
     render();
     setStatus(
-      `Neue Partie gestartet: ${actualPairs} Paare im Deck „${selectedCategory}“. ${state.players[0].name} beginnt.`
+      `Neue Partie gestartet: ${getLevelMeta(state.level).title}, ${actualPairs} Paare im Deck „${selectedCategory}“. ${state.players[0].name} beginnt.`
     );
   }
 
@@ -217,7 +240,7 @@
     const accuracy = state.attempts === 0 ? 0 : Math.round((state.matches / state.attempts) * 100);
     elements.accuracyStat.textContent = `${accuracy} %`;
     elements.deckMeta.textContent = state.activePairs
-      ? `${state.deck.length} Karten im Raster, Themenbereich: ${state.category}.`
+      ? `${state.deck.length} Karten im Raster, ${getLevelMeta(state.level).title}, Themenbereich: ${state.category}.`
       : "Noch keine Partie aktiv.";
   }
 
@@ -228,7 +251,9 @@
       return;
     }
 
-    const pageHint = state.lastMatch.sourcePage
+    const pageHint = state.level === "level2"
+      ? "Interpretations- und Theoriekarte aus Level 2."
+      : state.lastMatch.sourcePage
       ? `Primärquelle: automatisch zugeordnete Seite ${state.lastMatch.sourcePage}.`
       : "Primärquelle: für dieses Paar konnte automatisch keine eindeutige Seite ermittelt werden.";
     const contextBlock = state.lastMatch.answerFragment
@@ -296,7 +321,9 @@
         ].filter(Boolean).join(" ");
 
         const disabled = state.lockBoard || matched || state.openIds.includes(card.uid) || state.previewMode;
-        const pageLabel = card.sourcePage ? `S. ${card.sourcePage}` : "ohne Seite";
+        const pageLabel = state.level === "level2"
+          ? "Level 2"
+          : card.sourcePage ? `S. ${card.sourcePage}` : "ohne Seite";
         const contextHint = card.faceType === "answer" && card.answerFragment
           ? `<span class="fragment-pill">Kontext nötig</span>`
           : "";
@@ -437,7 +464,9 @@
       return;
     }
 
-    const pageHint = card.sourcePage ? `Primärquelle: Seite ${card.sourcePage}` : "Primärquelle: keine sichere Seitenzuordnung";
+    const pageHint = state.level === "level2"
+      ? "Interpretations- und Theoriekarte"
+      : card.sourcePage ? `Primärquelle: Seite ${card.sourcePage}` : "Primärquelle: keine sichere Seitenzuordnung";
     elements.zoomType.textContent = card.label;
     elements.zoomTitle.textContent = `Nr. ${card.pairId}`;
     elements.zoomMeta.textContent = `${card.category} · ${pageHint}${card.faceType === "answer" && card.answerFragment ? " · Kontext nötig" : ""}`;
@@ -465,15 +494,28 @@
     elements.startGameBtn.addEventListener("click", startGame);
     elements.previewBtn.addEventListener("click", activatePreview);
     elements.zoomCloseBtn.addEventListener("click", closeZoom);
+    elements.levelSelect.addEventListener("change", () => {
+      state.level = elements.levelSelect.value;
+      state.category = "Alle Themen";
+      populateCategorySelect();
+      elements.categorySelect.value = "Alle Themen";
+      const availablePairs = getAvailableCards().length;
+      updateSetupHint(
+        Number(elements.pairCount.value),
+        Math.min(Number(elements.pairCount.value), availablePairs),
+        availablePairs
+      );
+    });
     elements.categorySelect.addEventListener("change", () => {
       state.category = elements.categorySelect.value;
       const availablePairs = getAvailableCards().length;
       updateSetupHint(Number(elements.pairCount.value), Math.min(Number(elements.pairCount.value), availablePairs), availablePairs);
     });
     elements.pairCount.addEventListener("change", () => {
+      const pool = getActivePool();
       const availablePairs = state.category === "Alle Themen"
-        ? cards.length
-        : cards.filter((card) => card.category === state.category).length;
+        ? pool.length
+        : pool.filter((card) => card.category === state.category).length;
       updateSetupHint(Number(elements.pairCount.value), Math.min(Number(elements.pairCount.value), availablePairs), availablePairs);
     });
     elements.board.addEventListener("click", (event) => {
@@ -501,12 +543,14 @@
   }
 
   function init() {
+    populateLevelSelect();
+    state.level = elements.levelSelect.value || "level1";
     populateCategorySelect();
     renderSources();
     attachEvents();
     state.players = createPlayers(Number(elements.playerCount.value));
     render();
-    updateSetupHint(Number(elements.pairCount.value), Number(elements.pairCount.value), cards.length);
+    updateSetupHint(Number(elements.pairCount.value), Number(elements.pairCount.value), getActivePool().length);
   }
 
   init();

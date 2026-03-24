@@ -1,22 +1,22 @@
-window.THIEL_MEMORY_SOURCES = [
+window.THIEL_MEMORY_LEVELS = [
   {
-    title: "Primärtext",
-    file: "Hauptmann_Gerhart_-_Bahnwaerter_Thiel.pdf",
-    note: "Grundlage für Figuren, Motive, Szenen und die automatisch ermittelten Seitenhinweise; zur Laufzeit nicht erforderlich."
+    id: "level1",
+    title: "Level 1: Textverständnis",
+    note: "Figuren, Handlung, Motive, Schlüsselszenen und Textbeobachtung."
   },
   {
-    title: "Memory-Gesamtfassung",
-    file: "memory_bahnwaerter_thiel_full.pdf",
-    note: "Diente als vollständige analoge Vorstruktur des Spiels; die digitale Fassung arbeitet davon unabhängig."
+    id: "level2",
+    title: "Level 2: Interpretation und Theorie",
+    note: "Textdeutung, Naturalismus und Novellentheorie."
   },
   {
-    title: "Karten-Mapping",
-    file: "memory_mapping_bahnwaerter_thiel_full.json",
-    note: "Enthält die 50 digitalisierten Frage-Antwort-Paare; diese sind bereits direkt in die Web-App übernommen."
+    id: "hint",
+    title: "Spielhinweis",
+    note: "Offene Karten lassen sich über die Lupe vergrößern; markierte Antwortkarten enthalten zusätzlich Kontext."
   }
 ];
 
-window.THIEL_MEMORY_CARDS = [
+window.THIEL_MEMORY_TEXT_CARDS = [
   {
     id: 1,
     question: "Welche Erinnerung an Minna legt Thiel nachts im Wärterhaus vor sich auf den Tisch?",
@@ -386,3 +386,176 @@ window.THIEL_MEMORY_CARDS = [
     answerContext: "Die Aussage ist elliptisch. Gemeint ist: Am Ende ist Thiels Geist zerstört; er hat den Verstand verloren."
   }
 ];
+
+window.THIEL_MEMORY_INTERPRETATION_CARDS = [
+  {
+    id: 101,
+    question: "Warum gilt Thiel eher als Antiheld denn als klassischer Held?",
+    answer: "Weil er passiv bleibt, von äußeren Zwängen gelenkt wird und das Unheil nicht entschlossen verhindert.",
+    category: "Textdeutung",
+    sourcePage: null
+  },
+  {
+    id: 102,
+    question: "Welche innere Spaltung prägt Thiel am stärksten?",
+    answer: "Er schwankt zwischen vergeistigter Treue zu Minna und körperisch-alltäglicher Bindung an Lene.",
+    category: "Textdeutung",
+    sourcePage: null
+  },
+  {
+    id: 103,
+    question: "Welche Funktion hat das Wärterhäuschen für Thiels Innenleben?",
+    answer: "Es ist Rückzugsraum, Erinnerungsort und beinahe heiliger Gegenpol zu seinem bedrückenden Familienalltag.",
+    category: "Textdeutung",
+    sourcePage: null
+  },
+  {
+    id: 104,
+    question: "Warum verschärft Lenes Eindringen in Thiels Arbeitsraum den Konflikt?",
+    answer: "Weil damit seine letzte geschützte Ordnung zerstört wird und Beruf, Erinnerung und Familienkonflikt zusammenprallen.",
+    category: "Textdeutung",
+    sourcePage: null
+  },
+  {
+    id: 105,
+    question: "Was macht die Eisenbahn im Text zu mehr als bloßer Kulisse?",
+    answer: "Sie bündelt Technik, Bedrohung, Fremdbestimmung und die zerstörerische Dynamik der Handlung.",
+    category: "Textdeutung",
+    sourcePage: null
+  },
+  {
+    id: 106,
+    question: "Was zeigt Thiels Verhalten gegenüber Tobias über seine Schuldproblematik?",
+    answer: "Er liebt den Sohn, schützt ihn aber nicht wirksam und lädt dadurch Schuld auf sich.",
+    category: "Textdeutung",
+    sourcePage: null
+  },
+  {
+    id: 107,
+    question: "Warum ist der Schluss interpretatorisch nicht nur Tat, sondern Zusammenbruch?",
+    answer: "Der Doppelmord erscheint als Endpunkt eines langen psychischen, sozialen und moralischen Zerfalls.",
+    category: "Textdeutung",
+    sourcePage: null
+  },
+  {
+    id: 108,
+    question: "Wie hängen Visionen und Schuld bei Thiel zusammen?",
+    answer: "Die Visionen verstärken seine verdrängte Schuld und treiben ihn tiefer in die Entfremdung von der Wirklichkeit.",
+    category: "Textdeutung",
+    sourcePage: null
+  },
+  {
+    id: 109,
+    question: "Welches Menschenbild des Naturalismus zeigt sich an Thiel besonders deutlich?",
+    answer: "Der Mensch erscheint stark von Milieu, sozialer Lage, Trieb und psychischer Disposition bestimmt.",
+    category: "Naturalismus",
+    sourcePage: null
+  },
+  {
+    id: 110,
+    question: "Warum passt Thiels soziale Lage typisch zum Naturalismus?",
+    answer: "Im Zentrum steht kein idealisierter Held, sondern ein einfacher Arbeiter in einem von Not und Abhängigkeit geprägten Alltag.",
+    category: "Naturalismus",
+    sourcePage: null
+  },
+  {
+    id: 111,
+    question: "Wie zeigt sich Milieugebundenheit in Bahnwärter Thiel?",
+    answer: "Arbeitswelt, Wohnverhältnisse, Armut und familiäre Enge prägen Denken, Verhalten und Konflikte der Figuren.",
+    category: "Naturalismus",
+    sourcePage: null
+  },
+  {
+    id: 112,
+    question: "Warum ist die genaue, oft nüchterne Darstellung naturalistisch?",
+    answer: "Sie will Wirklichkeit möglichst ungeschönt beobachten und nicht poetisch verklären.",
+    category: "Naturalismus",
+    sourcePage: null
+  },
+  {
+    id: 113,
+    question: "Wieso ist die Eisenbahn ein Leitmotiv des Naturalismus in der Novelle?",
+    answer: "Sie verkörpert Industrialisierung und macht sichtbar, wie Technik das Leben des Menschen beherrscht und bedroht.",
+    category: "Naturalismus",
+    sourcePage: null
+  },
+  {
+    id: 114,
+    question: "Was bedeutet Determination im Fall Thiel?",
+    answer: "Thiels Handeln wirkt durch Vorgeschichte, Abhängigkeit, soziale Zwänge und psychische Überforderung stark festgelegt.",
+    category: "Naturalismus",
+    sourcePage: null
+  },
+  {
+    id: 115,
+    question: "Warum passt der Begriff Sekundenstil nur eingeschränkt zu Bahnwärter Thiel?",
+    answer: "Einzelne Szenen sind detailnah und zeitdeckend, insgesamt bleibt der Text aber stärker verdichtet als radikal naturalistische Prosa.",
+    category: "Naturalismus",
+    sourcePage: null
+  },
+  {
+    id: 116,
+    question: "Warum ist Bahnwärter Thiel nicht rein naturalistisch?",
+    answer: "Symbolik, Visionen und psychische Überhöhungen überschreiten eine rein protokollhafte Wirklichkeitsdarstellung.",
+    category: "Naturalismus",
+    sourcePage: null
+  },
+  {
+    id: 117,
+    question: "Warum nennt Hauptmann den Text eine novellistische Studie?",
+    answer: "Weil der Text novellentypische Form mit beobachtender, fast studienhafter Darstellung verbindet.",
+    category: "Novellentheorie",
+    sourcePage: null
+  },
+  {
+    id: 118,
+    question: "Welche geschlossene Form spricht für den Novellencharakter?",
+    answer: "Die Handlung konzentriert sich auf einen Kernkonflikt und steuert geradlinig auf die Katastrophe zu.",
+    category: "Novellentheorie",
+    sourcePage: null
+  },
+  {
+    id: 119,
+    question: "Was ist in Bahnwärter Thiel die unerhörte Begebenheit im Sinn Goethes?",
+    answer: "Die unerhörte, aber realistisch vorstellbare Begebenheit ist Thiels Mord an Lene und dem Kind.",
+    category: "Novellentheorie",
+    sourcePage: null
+  },
+  {
+    id: 120,
+    question: "Warum gilt die Eisenbahn als Dingsymbol der Novelle?",
+    answer: "Ein konkreter Gegenstand trägt hier zentrale Bedeutung und strukturiert zugleich die ganze Handlung.",
+    category: "Novellentheorie",
+    sourcePage: null
+  },
+  {
+    id: 121,
+    question: "Was spricht an der Figurenkonstellation für eine Novelle?",
+    answer: "Die Zahl der Hauptfiguren ist klein und alle Beziehungen sind eng auf den zentralen Konflikt bezogen.",
+    category: "Novellentheorie",
+    sourcePage: null
+  },
+  {
+    id: 122,
+    question: "Warum wirkt der Aufbau novellentypisch linear?",
+    answer: "Die Vorgeschichte ist knapp, Nebenhandlungen fehlen weitgehend und alles läuft auf den Höhepunkt am Ende zu.",
+    category: "Novellentheorie",
+    sourcePage: null
+  },
+  {
+    id: 123,
+    question: "Welche Rolle spielen Vorausdeutungen für die Novellenform?",
+    answer: "Sie verdichten die Handlung und lassen das spätere Unheil früh als zielgerichtete Entwicklung erscheinen.",
+    category: "Novellentheorie",
+    sourcePage: null
+  },
+  {
+    id: 124,
+    question: "Worin unterscheidet sich die Studie vom klassischen Novellenideal?",
+    answer: "Sie wirkt sozialanalytischer, beobachtender und weniger formschön geschlossen als eine klassisch ausgeglichene Novelle.",
+    category: "Novellentheorie",
+    sourcePage: null
+  }
+];
+
+window.THIEL_MEMORY_CARDS = window.THIEL_MEMORY_TEXT_CARDS;

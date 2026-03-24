@@ -18,18 +18,16 @@
         <h1>Bahnwärter Thiel</h1>
         <p class="lead">
           Dieses Memory verbindet Fragen aus der Novelle mit den passenden Textzitaten.
-          Grundlage sind die bereitgestellten Dateien zur Primärquelle, zur vollständigen
-          Memory-Fassung und zum Mapping der Kartenpaare. Das Spiel funktioniert als
-          eigenständige Web-App und steht vollständig für sich.
+          Es bietet nun zwei eigenständige Spiellevel: ein erstes Level zum Textverständnis
+          und ein zweites Level zu Interpretation, Naturalismus und Novellentheorie.
         </p>
       </div>
       <div class="hero-note">
         <p class="note-kicker">Spielidee</p>
         <p>
           Finde jeweils eine <strong>Fragekarte</strong> und das passende <strong>Zitat</strong>.
-          Erfolgreiche Treffer bleiben offen, zählen als Punkt und erscheinen rechts mit
-          Themenbereich und, wenn automatisch auffindbar, Seitenhinweis zur Primärquelle.
-          Es gibt keine technische oder spielerische Verbindung zu anderen Projekten im Workspace.
+          Im zweiten Level werden die Zitatkarten durch klar formulierte Deutungs- und Theorieantworten ersetzt.
+          Erfolgreiche Treffer bleiben offen, zählen als Punkt und lassen sich über die Lupe genauer lesen.
         </p>
       </div>
     </section>
@@ -45,6 +43,11 @@
         </div>
 
         <div class="control-grid">
+          <label class="field">
+            <span>Spiellevel</span>
+            <select id="levelSelect"></select>
+          </label>
+
           <label class="field">
             <span>Spielende</span>
             <select id="playerCount">
@@ -123,7 +126,7 @@
         <div class="panel-head">
           <div>
             <p class="eyebrow">Spielfeld</p>
-            <h2>Frage trifft Zitat</h2>
+            <h2>Frage trifft Antwort</h2>
           </div>
           <p id="deckMeta" class="compact-copy">Noch keine Partie aktiv.</p>
         </div>
@@ -159,8 +162,8 @@
         <section class="panel">
           <div class="panel-head">
             <div>
-              <p class="eyebrow">Quellenbasis</p>
-              <h2>Verwendete Dateien</h2>
+              <p class="eyebrow">Level-Kompass</p>
+              <h2>Spielstruktur</h2>
             </div>
           </div>
           <div id="sourceList" class="source-list"></div>
