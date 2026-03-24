@@ -54,7 +54,7 @@ window.THIEL_MEMORY_CARDS = [
   },
   {
     id: 6,
-    question: "Unter welchen nächtlichen Umständen steigern sich Thiels Visionen besonders stark?",
+    question: "Unter welchen nächtlichen Umständen im Wärterhäuschen steigern sich Thiels Visionen besonders stark?",
     answer: "„im Dunkel … in tiefer Mitternacht“",
     category: "Kapelle und Visionen",
     sourcePage: null,
@@ -135,7 +135,7 @@ window.THIEL_MEMORY_CARDS = [
   },
   {
     id: 17,
-    question: "Wie beschreibt der Text Thiels Zustand zwischen Traum und Wirklichkeit nach dem Erwachen?",
+    question: "Wie beschreibt der Text Thiels Zustand zwischen Traum und Wirklichkeit direkt nach dem Erwachen aus diesem Traum?",
     answer: "„Traum und Wirklichkeit verschmolzen ihm in eins“",
     category: "Traum und Vorahnung",
     sourcePage: 37
@@ -184,7 +184,7 @@ window.THIEL_MEMORY_CARDS = [
   },
   {
     id: 24,
-    question: "Was geschieht mit Thiels aufsteigender Wut in dieser Szene?",
+    question: "Was geschieht mit Thiels aufsteigender Wut, als er Lene Tobias misshandeln hört?",
     answer: "„es ließ nach“",
     category: "Lene, Tobias und Verdrängung",
     sourcePage: 22,
@@ -193,7 +193,7 @@ window.THIEL_MEMORY_CARDS = [
   },
   {
     id: 25,
-    question: "Warum greift Thiel in der Szene mit Lene und Tobias nicht offen ein?",
+    question: "Warum greift Thiel nicht offen ein, als er Lene Tobias misshandeln hört?",
     answer: "„hörte kaum, was sie sagte“",
     category: "Lene, Tobias und Verdrängung",
     sourcePage: null,
@@ -216,7 +216,7 @@ window.THIEL_MEMORY_CARDS = [
   },
   {
     id: 28,
-    question: "Wie verhält sich Thiel unmittelbar danach gegenüber Tobias?",
+    question: "Wie verhält sich Thiel gegenüber Tobias, obwohl er dessen Misshandlung bemerkt hat?",
     answer: "„ohne auch nur weiter nach ihm umzuschauen“",
     category: "Lene, Tobias und Verdrängung",
     sourcePage: 25
@@ -251,7 +251,7 @@ window.THIEL_MEMORY_CARDS = [
   },
   {
     id: 33,
-    question: "Was erkennt Thiel dann auf den Schienen?",
+    question: "Was erkennt Thiel unmittelbar nach den Notpfiffen auf den Schienen?",
     answer: "„eine dunkle Masse“",
     category: "Unfall und Schock",
     sourcePage: 48
@@ -348,7 +348,7 @@ window.THIEL_MEMORY_CARDS = [
   },
   {
     id: 46,
-    question: "Was tut Thiel später im Zustand des Wahnsinns mit Lene?",
+    question: "Was tut Thiel nach Tobias' Tod im Zustand des Wahnsinns mit Lene?",
     answer: "„erschlug er seine Frau“",
     category: "Rache und Wahnsinn",
     sourcePage: null
