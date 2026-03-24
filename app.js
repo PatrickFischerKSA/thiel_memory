@@ -321,9 +321,6 @@
         ].filter(Boolean).join(" ");
 
         const disabled = state.lockBoard || matched || state.openIds.includes(card.uid) || state.previewMode;
-        const pageLabel = state.level === "level2"
-          ? "Level 2"
-          : card.sourcePage ? `S. ${card.sourcePage}` : "ohne Seite";
         const contextHint = card.faceType === "answer" && card.answerFragment
           ? `<span class="fragment-pill">Kontext nötig</span>`
           : "";
@@ -352,7 +349,6 @@
               <p class="card-text">${escapeHtml(card.text)}</p>
               <div class="card-bottom">
                 <span>${escapeHtml(card.category)}</span>
-                <span>${escapeHtml(pageLabel)}</span>
               </div>
               ${contextHint}
             </div>
