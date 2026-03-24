@@ -57,7 +57,9 @@ window.THIEL_MEMORY_CARDS = [
     question: "Unter welchen nächtlichen Umständen steigern sich Thiels Visionen besonders stark?",
     answer: "„im Dunkel … in tiefer Mitternacht“",
     category: "Kapelle und Visionen",
-    sourcePage: null
+    sourcePage: null,
+    answerFragment: true,
+    answerContext: "Das Zitat nennt nur die Situation. Gemeint ist: Gerade in dunkler, tiefer Nacht werden Thiels Visionen besonders intensiv."
   },
   {
     id: 7,
@@ -85,7 +87,9 @@ window.THIEL_MEMORY_CARDS = [
     question: "Was verrät Thiels nächtliches Verhalten im Wärterhäuschen über seinen psychischen Zustand?",
     answer: "„geriet … in eine Ekstase“",
     category: "Kapelle und Visionen",
-    sourcePage: null
+    sourcePage: null,
+    answerFragment: true,
+    answerContext: "Der Satz ist stark verkürzt. Gemeint ist: Thiels nächtliches Ritual zeigt einen psychisch entrückten, ekstatischen Zustand."
   },
   {
     id: 11,
@@ -183,14 +187,18 @@ window.THIEL_MEMORY_CARDS = [
     question: "Was geschieht mit Thiels aufsteigender Wut in dieser Szene?",
     answer: "„es ließ nach“",
     category: "Lene, Tobias und Verdrängung",
-    sourcePage: 22
+    sourcePage: 22,
+    answerFragment: true,
+    answerContext: "Das Pronomen ist ohne Kontext unklar. Gemeint ist: Thiels aufsteigende Wut ebbt wieder ab, statt in offenes Handeln umzuschlagen."
   },
   {
     id: 25,
     question: "Warum greift Thiel in der Szene mit Lene und Tobias nicht offen ein?",
     answer: "„hörte kaum, was sie sagte“",
     category: "Lene, Tobias und Verdrängung",
-    sourcePage: null
+    sourcePage: null,
+    answerFragment: true,
+    answerContext: "Die Antwort bleibt als isoliertes Zitat schmal. Gemeint ist: Thiel ist innerlich so erschüttert, dass er kaum noch auf Lenes Worte reagieren kann."
   },
   {
     id: 26,
@@ -274,7 +282,9 @@ window.THIEL_MEMORY_CARDS = [
     question: "Wie beschreibt der Text den zerschmetterten Zustand von Tobias' Körper?",
     answer: "„nicht nur in den Gelenken gebrochen“",
     category: "Unfall und Schock",
-    sourcePage: null
+    sourcePage: null,
+    answerFragment: true,
+    answerContext: "Das Zitat ist nur ein Ausschnitt. Gemeint ist: Tobias' Körper ist nach dem Unfall schwerst zerstört und weit über einzelne Brüche hinaus verletzt."
   },
   {
     id: 38,
@@ -309,7 +319,9 @@ window.THIEL_MEMORY_CARDS = [
     question: "Wie wirkt Thiels Gesicht nach dem Unfall auf die Umstehenden?",
     answer: "„sein Gesicht ist … tot“",
     category: "Unfall und Schock",
-    sourcePage: null
+    sourcePage: null,
+    answerFragment: true,
+    answerContext: "Das Bild ist elliptisch. Gemeint ist: Thiels Gesicht wirkt leblos und vollkommen erstarrt."
   },
   {
     id: 43,
@@ -323,7 +335,9 @@ window.THIEL_MEMORY_CARDS = [
     question: "Welche Folgen haben die letzten Eindrücke von Tobias' Tod für Thiels weiteres Schicksal?",
     answer: "„die Eindrücke der letzten Stunden … besiegeln konnten“",
     category: "Unfall und Schock",
-    sourcePage: null
+    sourcePage: null,
+    answerFragment: true,
+    answerContext: "Der Satz ist ohne syntaktische Umgebung schwer verständlich. Gemeint ist: Die Eindrücke von Tobias' Tod besiegeln Thiels psychischen Zusammenbruch."
   },
   {
     id: 45,
@@ -344,7 +358,9 @@ window.THIEL_MEMORY_CARDS = [
     question: "Was geschieht in Thiels Gewalttat auch mit dem gemeinsamen Kind?",
     answer: "„und das Kind“",
     category: "Rache und Wahnsinn",
-    sourcePage: 63
+    sourcePage: 63,
+    answerFragment: true,
+    answerContext: "Das Zitat ist maximal verkürzt. Gemeint ist: Nicht nur Lene, sondern auch das gemeinsame Kind wird Opfer von Thiels Gewalttat."
   },
   {
     id: 48,
@@ -365,6 +381,8 @@ window.THIEL_MEMORY_CARDS = [
     question: "Was zeigt Thiels Ende über den Zustand seines Geistes?",
     answer: "„sein Geist … verloren“",
     category: "Rache und Wahnsinn",
-    sourcePage: null
+    sourcePage: null,
+    answerFragment: true,
+    answerContext: "Die Aussage ist elliptisch. Gemeint ist: Am Ende ist Thiels Geist zerstört; er hat den Verstand verloren."
   }
 ];

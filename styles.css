@@ -462,6 +462,20 @@ select {
   color: var(--muted);
 }
 
+.fragment-pill {
+  align-self: start;
+  margin-top: 10px;
+  display: inline-flex;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(147, 70, 52, 0.12);
+  color: var(--ember);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
 .match-detail,
 .history-item,
 .source-item {
@@ -487,6 +501,12 @@ select {
 
 .detail-block strong {
   font-size: 1.05rem;
+}
+
+.detail-context {
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(147, 70, 52, 0.07);
 }
 
 .match-meta {
@@ -571,6 +591,23 @@ select {
   font-size: clamp(1.15rem, 2.2vw, 1.6rem);
   line-height: 1.5;
   white-space: pre-wrap;
+}
+
+.zoom-main-text {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.zoom-context {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.zoom-context p:last-child {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.7;
 }
 
 @media (max-width: 1080px) {

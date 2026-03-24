@@ -71,7 +71,9 @@
           label: "Frage",
           text: item.question,
           category: item.category,
-          sourcePage: item.sourcePage
+          sourcePage: item.sourcePage,
+          answerFragment: Boolean(item.answerFragment),
+          answerContext: item.answerContext || ""
         },
         {
           uid: `${item.id}-answer`,
@@ -80,7 +82,9 @@
           label: "Zitat",
           text: item.answer,
           category: item.category,
-          sourcePage: item.sourcePage
+          sourcePage: item.sourcePage,
+          answerFragment: Boolean(item.answerFragment),
+          answerContext: item.answerContext || ""
         }
       ])
     );
@@ -227,6 +231,14 @@
     const pageHint = state.lastMatch.sourcePage
       ? `Primärquelle: automatisch zugeordnete Seite ${state.lastMatch.sourcePage}.`
       : "Primärquelle: für dieses Paar konnte automatisch keine eindeutige Seite ermittelt werden.";
+    const contextBlock = state.lastMatch.answerFragment
+      ? `
+        <div class="detail-block detail-context">
+          <p class="card-badge">Kontext zur Antwort</p>
+          <strong>${escapeHtml(state.lastMatch.answerContext)}</strong>
+        </div>
+      `
+      : "";
 
     elements.matchDetail.className = "match-detail";
     elements.matchDetail.innerHTML = `
@@ -238,6 +250,7 @@
         <p class="card-badge">Zitat</p>
         <strong>${escapeHtml(state.lastMatch.answer)}</strong>
       </div>
+      ${contextBlock}
       <p class="match-meta">
         Themenbereich: <strong>${escapeHtml(state.lastMatch.category)}</strong><br />
         ${escapeHtml(pageHint)}
@@ -284,6 +297,9 @@
 
         const disabled = state.lockBoard || matched || state.openIds.includes(card.uid) || state.previewMode;
         const pageLabel = card.sourcePage ? `S. ${card.sourcePage}` : "ohne Seite";
+        const contextHint = card.faceType === "answer" && card.answerFragment
+          ? `<span class="fragment-pill">Kontext nötig</span>`
+          : "";
 
         if (!visible) {
           return `
@@ -313,6 +329,7 @@
                 <span>${escapeHtml(card.category)}</span>
                 <span>${escapeHtml(pageLabel)}</span>
               </div>
+              ${contextHint}
             </div>
           </article>
         `;
@@ -423,8 +440,16 @@
     const pageHint = card.sourcePage ? `Primärquelle: Seite ${card.sourcePage}` : "Primärquelle: keine sichere Seitenzuordnung";
     elements.zoomType.textContent = card.label;
     elements.zoomTitle.textContent = `Nr. ${card.pairId}`;
-    elements.zoomMeta.textContent = `${card.category} · ${pageHint}`;
-    elements.zoomText.textContent = card.text;
+    elements.zoomMeta.textContent = `${card.category} · ${pageHint}${card.faceType === "answer" && card.answerFragment ? " · Kontext nötig" : ""}`;
+    elements.zoomText.innerHTML = `
+      <div class="zoom-main-text">${escapeHtml(card.text)}</div>
+      ${card.faceType === "answer" && card.answerFragment ? `
+        <div class="zoom-context">
+          <p class="card-badge">Kontext zur Antwort</p>
+          <p>${escapeHtml(card.answerContext)}</p>
+        </div>
+      ` : ""}
+    `;
     elements.zoomModal.classList.remove("modal-hidden");
     elements.zoomModal.setAttribute("aria-hidden", "false");
     document.body.classList.add("modal-open");
