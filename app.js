@@ -20,7 +20,13 @@
     board: document.getElementById("board"),
     matchDetail: document.getElementById("matchDetail"),
     historyList: document.getElementById("historyList"),
-    sourceList: document.getElementById("sourceList")
+    sourceList: document.getElementById("sourceList"),
+    zoomModal: document.getElementById("zoomModal"),
+    zoomType: document.getElementById("zoomType"),
+    zoomTitle: document.getElementById("zoomTitle"),
+    zoomMeta: document.getElementById("zoomMeta"),
+    zoomText: document.getElementById("zoomText"),
+    zoomCloseBtn: document.getElementById("zoomCloseBtn")
   };
 
   const state = {
@@ -134,6 +140,7 @@
   }
 
   function startGame() {
+    closeZoom();
     const selectedCategory = elements.categorySelect.value;
     const playerCount = Number(elements.playerCount.value);
     const requestedPairs = Number(elements.pairCount.value);
@@ -280,27 +287,34 @@
 
         if (!visible) {
           return `
-            <button class="${classes}" type="button" data-uid="${card.uid}" ${disabled ? "disabled" : ""} aria-label="Verdeckte Karte">
-              <div class="card-top">
-                <p class="card-badge">Bahnwärter Thiel</p>
-                <span class="card-index">Nr. ${card.pairId}</span>
+            <article class="${classes}">
+              <button class="card-action" type="button" data-uid="${card.uid}" ${disabled ? "disabled" : ""} aria-label="Verdeckte Karte"></button>
+              <div class="card-face">
+                <div class="card-top">
+                  <p class="card-badge">Bahnwärter Thiel</p>
+                  <span class="card-index">Nr. ${card.pairId}</span>
+                </div>
               </div>
-            </button>
+            </article>
           `;
         }
 
         return `
-          <button class="${classes}" type="button" data-uid="${card.uid}" ${disabled ? "disabled" : ""} aria-label="${escapeHtml(card.label)}">
-            <div class="card-top">
-              <p class="card-badge">${escapeHtml(card.label)}</p>
-              <span class="card-index">Nr. ${card.pairId}</span>
+          <article class="${classes}">
+            <button class="card-action" type="button" data-uid="${card.uid}" ${disabled ? "disabled" : ""} aria-label="${escapeHtml(card.label)}"></button>
+            <button class="zoom-btn" type="button" data-zoom-uid="${card.uid}" aria-label="Karte vergrößern">Lupe</button>
+            <div class="card-face">
+              <div class="card-top">
+                <p class="card-badge">${escapeHtml(card.label)}</p>
+                <span class="card-index">Nr. ${card.pairId}</span>
+              </div>
+              <p class="card-text">${escapeHtml(card.text)}</p>
+              <div class="card-bottom">
+                <span>${escapeHtml(card.category)}</span>
+                <span>${escapeHtml(pageLabel)}</span>
+              </div>
             </div>
-            <p class="card-text">${escapeHtml(card.text)}</p>
-            <div class="card-bottom">
-              <span>${escapeHtml(card.category)}</span>
-              <span>${escapeHtml(pageLabel)}</span>
-            </div>
-          </button>
+          </article>
         `;
       })
       .join("");
@@ -400,9 +414,32 @@
     }, 8000);
   }
 
+  function openZoom(uid) {
+    const card = getCardByUid(uid);
+    if (!card || !isCardVisible(card)) {
+      return;
+    }
+
+    const pageHint = card.sourcePage ? `Primärquelle: Seite ${card.sourcePage}` : "Primärquelle: keine sichere Seitenzuordnung";
+    elements.zoomType.textContent = card.label;
+    elements.zoomTitle.textContent = `Nr. ${card.pairId}`;
+    elements.zoomMeta.textContent = `${card.category} · ${pageHint}`;
+    elements.zoomText.textContent = card.text;
+    elements.zoomModal.classList.remove("modal-hidden");
+    elements.zoomModal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+  }
+
+  function closeZoom() {
+    elements.zoomModal.classList.add("modal-hidden");
+    elements.zoomModal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+  }
+
   function attachEvents() {
     elements.startGameBtn.addEventListener("click", startGame);
     elements.previewBtn.addEventListener("click", activatePreview);
+    elements.zoomCloseBtn.addEventListener("click", closeZoom);
     elements.categorySelect.addEventListener("change", () => {
       state.category = elements.categorySelect.value;
       const availablePairs = getAvailableCards().length;
@@ -415,11 +452,26 @@
       updateSetupHint(Number(elements.pairCount.value), Math.min(Number(elements.pairCount.value), availablePairs), availablePairs);
     });
     elements.board.addEventListener("click", (event) => {
+      const zoomButton = event.target.closest("[data-zoom-uid]");
+      if (zoomButton) {
+        openZoom(zoomButton.getAttribute("data-zoom-uid"));
+        return;
+      }
       const button = event.target.closest("[data-uid]");
       if (!button) {
         return;
       }
       handleCardClick(button.getAttribute("data-uid"));
+    });
+    elements.zoomModal.addEventListener("click", (event) => {
+      if (event.target.closest("[data-close-zoom='true']")) {
+        closeZoom();
+      }
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && elements.zoomModal.getAttribute("aria-hidden") === "false") {
+        closeZoom();
+      }
     });
   }
 

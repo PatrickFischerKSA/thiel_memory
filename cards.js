@@ -19,350 +19,350 @@ window.THIEL_MEMORY_SOURCES = [
 window.THIEL_MEMORY_CARDS = [
   {
     id: 1,
-    question: "Was legt Bahnwärter Thiel nachts im Wärterhaus vor sich auf den Tisch?",
+    question: "Welche Erinnerung an Minna legt Thiel nachts im Wärterhaus vor sich auf den Tisch?",
     answer: "„eine verblichene Photographie der Verstorbenen vor sich auf dem Tisch“",
     category: "Kapelle und Visionen",
     sourcePage: 10
   },
   {
     id: 2,
-    question: "Welche Bücher benutzt Bahnwärter Thiel im Wärterhaus?",
+    question: "Welche beiden Bücher schlägt Thiel bei seinen nächtlichen Ritualen im Wärterhaus auf?",
     answer: "„Gesangbuch und Bibel aufgeschlagen“",
     category: "Kapelle und Visionen",
     sourcePage: 10
   },
   {
     id: 3,
-    question: "Was geschieht mit Bahnwärter Thiel, wenn er nachts liest und singt?",
+    question: "Welche Wirkung hat das nächtliche Lesen und Singen im Wärterhaus auf Thiel?",
     answer: "„geriet hierbei in eine Ekstase, die sich zu Gesichten steigerte“",
     category: "Kapelle und Visionen",
     sourcePage: 10
   },
   {
     id: 4,
-    question: "Wen sieht Bahnwärter Thiel in seinen Visionen?",
+    question: "Wen glaubt Thiel in seinen nächtlichen Visionen leibhaftig vor sich zu sehen?",
     answer: "„die Tote leibhaftig vor sich sah“",
     category: "Kapelle und Visionen",
     sourcePage: 10
   },
   {
     id: 5,
-    question: "Was wird das Wärterhaus für Bahnwärter Thiel in der Nacht?",
+    question: "Zu welchem sakralen Raum wird das Wärterhäuschen für Thiel in der Nacht?",
     answer: "„da wurde das Wärterhäuschen zur Kapelle“",
     category: "Kapelle und Visionen",
     sourcePage: 10
   },
   {
     id: 6,
-    question: "In welcher Situation werden Thiels Visionen besonders stark?",
+    question: "Unter welchen nächtlichen Umständen steigern sich Thiels Visionen besonders stark?",
     answer: "„im Dunkel … in tiefer Mitternacht“",
     category: "Kapelle und Visionen",
     sourcePage: null
   },
   {
     id: 7,
-    question: "Wie bezeichnet Bahnwärter Thiel seinen Arbeitsplatz innerlich?",
+    question: "Als was empfindet Thiel seinen Arbeitsplatz im Wärterhäuschen innerlich?",
     answer: "„gleichsam für geheiligtes Land“",
     category: "Kapelle und Visionen",
     sourcePage: 9
   },
   {
     id: 8,
-    question: "Warum hält Bahnwärter Thiel Lene vom Wärterhaus fern?",
+    question: "Warum soll Lene nach Thiels Vorstellung keinen Zugang zum Wärterhäuschen haben?",
     answer: "„ausschließlich den Manen der Toten gewidmet sein sollte“",
     category: "Kapelle und Visionen",
     sourcePage: 9
   },
   {
     id: 9,
-    question: "Wie verbringt Bahnwärter Thiel die Nächte im Wärterhaus?",
+    question: "Wie gestaltet Thiel seine Nächte im Wärterhäuschen?",
     answer: "„las und sang er … die lange Nacht hindurch“",
     category: "Kapelle und Visionen",
     sourcePage: null
   },
   {
     id: 10,
-    question: "Was zeigt Thiels Verhalten im Wärterhaus über seinen Zustand?",
+    question: "Was verrät Thiels nächtliches Verhalten im Wärterhäuschen über seinen psychischen Zustand?",
     answer: "„geriet … in eine Ekstase“",
     category: "Kapelle und Visionen",
     sourcePage: null
   },
   {
     id: 11,
-    question: "Wen sieht Bahnwärter Thiel im Traum vor dem Unfall?",
+    question: "Wen sieht Thiel im Traum unmittelbar vor dem Unfall auf den Schienen?",
     answer: "„seine verstorbene Frau“",
     category: "Traum und Vorahnung",
     sourcePage: 36
   },
   {
     id: 12,
-    question: "Wie erscheint Minna im Traum von Bahnwärter Thiel?",
+    question: "Wie wirkt Minna in Thiels Traumerscheinung kurz vor dem Unfall?",
     answer: "„recht kränklich“",
     category: "Traum und Vorahnung",
     sourcePage: 36
   },
   {
     id: 13,
-    question: "Was trägt Minna im Traum?",
+    question: "Wie erscheint Minnas Körper im Traum vor dem Unfall?",
     answer: "„etwas Schlaffes, Blutiges, Bleiches“",
     category: "Traum und Vorahnung",
     sourcePage: 36
   },
   {
     id: 14,
-    question: "Wie bewegt sich Minna im Traum auf den Gleisen?",
+    question: "Wie bewegt sich Minna in Thiels Traum auf den Schienen vorwärts?",
     answer: "„nur mit großer Mühe vorwärtsgekommen“",
     category: "Traum und Vorahnung",
     sourcePage: null
   },
   {
     id: 15,
-    question: "Wie verhält sich Minna im Traum gegenüber Thiel?",
+    question: "Wie verhält sich Minna im Traum, als Thiel ihr zu folgen versucht?",
     answer: "„ohne sich darnach umzuschauen“",
     category: "Traum und Vorahnung",
     sourcePage: 36
   },
   {
     id: 16,
-    question: "Welche körperliche Reaktion zeigt Thiel nach dem Traum?",
+    question: "Welche körperlichen Spuren hinterlässt der Traum unmittelbar bei Thiel?",
     answer: "„sein Puls ging unregelmäßig, sein Gesicht war nass vor Tränen“",
     category: "Traum und Vorahnung",
     sourcePage: 33
   },
   {
     id: 17,
-    question: "Wie wird das Verhältnis von Traum und Realität beschrieben?",
+    question: "Wie beschreibt der Text Thiels Zustand zwischen Traum und Wirklichkeit nach dem Erwachen?",
     answer: "„Traum und Wirklichkeit verschmolzen ihm in eins“",
     category: "Traum und Vorahnung",
     sourcePage: 37
   },
   {
     id: 18,
-    question: "Was sieht Thiel noch beim herannahenden Zug?",
+    question: "Welche Gestalt sieht Thiel trotz des herannahenden Zuges noch immer auf den Schienen?",
     answer: "„noch immer sah er das wandernde Weib auf den Schienen“",
     category: "Traum und Vorahnung",
     sourcePage: null
   },
   {
     id: 19,
-    question: "Welche Handlung erwägt Thiel beim Zug?",
+    question: "Welche Eingriffshandlung scheint Thiel beim herannahenden Zug zu erwägen?",
     answer: "„als habe er die Absicht, den rasenden Zug zum Stehen zu bringen“",
     category: "Traum und Vorahnung",
     sourcePage: 37
   },
   {
     id: 20,
-    question: "Welches Gefühl überkommt Thiel beim Zug?",
+    question: "Welches Gefühl überfällt Thiel, als der Zug heranrast?",
     answer: "„ein Grauen und … eine umso größere Angst“",
     category: "Traum und Vorahnung",
     sourcePage: null
   },
   {
     id: 21,
-    question: "Was hört Thiel, als er Lene belauscht?",
+    question: "Welche Beschimpfung hört Thiel, als er Lene heimlich belauscht?",
     answer: "„Du unbarmherziger, herzloser Schuft!“",
     category: "Lene, Tobias und Verdrängung",
     sourcePage: 21
   },
   {
     id: 22,
-    question: "Welche Drohung richtet Lene gegen Tobias?",
+    question: "Welche Drohung richtet Lene in der Belauschungsszene gegen Tobias?",
     answer: "„du sollst eine Portion kriegen …“",
     category: "Lene, Tobias und Verdrängung",
     sourcePage: 22
   },
   {
     id: 23,
-    question: "Wie reagiert Thiel körperlich?",
+    question: "Wie reagiert Thiel körperlich, als er Lenes Härte gegen Tobias belauscht?",
     answer: "„er begann leise zu zittern“",
     category: "Lene, Tobias und Verdrängung",
     sourcePage: 22
   },
   {
     id: 24,
-    question: "Was geschieht mit Thiels Wut?",
+    question: "Was geschieht mit Thiels aufsteigender Wut in dieser Szene?",
     answer: "„es ließ nach“",
     category: "Lene, Tobias und Verdrängung",
     sourcePage: 22
   },
   {
     id: 25,
-    question: "Warum reagiert Thiel nicht offen?",
+    question: "Warum greift Thiel in der Szene mit Lene und Tobias nicht offen ein?",
     answer: "„hörte kaum, was sie sagte“",
     category: "Lene, Tobias und Verdrängung",
     sourcePage: null
   },
   {
     id: 26,
-    question: "Was entdeckt Thiel im Gesicht von Tobias?",
+    question: "Welches Misshandlungszeichen entdeckt Thiel später in Tobias' Gesicht?",
     answer: "„Fingerspuren … abzeichneten“",
     category: "Lene, Tobias und Verdrängung",
     sourcePage: null
   },
   {
     id: 27,
-    question: "Wie wird Thiels Abhängigkeit beschrieben?",
+    question: "Wie beschreibt der Text Thiels Abhängigkeit von Lene im Alltag?",
     answer: "„in allem fast unbedingt von ihr abhängig“",
     category: "Lene, Tobias und Verdrängung",
     sourcePage: 9
   },
   {
     id: 28,
-    question: "Wie verhält sich Thiel danach gegenüber Tobias?",
+    question: "Wie verhält sich Thiel unmittelbar danach gegenüber Tobias?",
     answer: "„ohne auch nur weiter nach ihm umzuschauen“",
     category: "Lene, Tobias und Verdrängung",
     sourcePage: 25
   },
   {
     id: 29,
-    question: "Welche Einsicht gewinnt Thiel später?",
+    question: "Welche späte Einsicht gewinnt Thiel über Tobias' bisheriges Leiden?",
     answer: "„die Leidensgeschichte seines Ältesten trat deutlich vor seine Seele“",
     category: "Lene, Tobias und Verdrängung",
     sourcePage: 33
   },
   {
     id: 30,
-    question: "Welche Gefühle empfindet Thiel dabei?",
+    question: "Welche Gefühle ergreifen Thiel, als ihm Tobias' Leidensgeschichte deutlich vor Augen tritt?",
     answer: "„Mitleid und Reue ergriff ihn sowie auch eine tiefe Scham“",
     category: "Lene, Tobias und Verdrängung",
     sourcePage: 33
   },
   {
     id: 31,
-    question: "Welche Warnung gibt Thiel vor dem Unfall?",
+    question: "Welche Warnung gibt Thiel Tobias kurz vor dem Unfall an den Gleisen?",
     answer: "„dass er den Geleisen nicht zu nahe kommt“",
     category: "Unfall und Schock",
     sourcePage: 47
   },
   {
     id: 32,
-    question: "Was hört Thiel vor dem Unfall?",
+    question: "Welches akustische Warnsignal hört Thiel unmittelbar vor dem Unfall?",
     answer: "„Notpfiffe“",
     category: "Unfall und Schock",
     sourcePage: 48
   },
   {
     id: 33,
-    question: "Was sieht Thiel auf den Gleisen?",
+    question: "Was erkennt Thiel dann auf den Schienen?",
     answer: "„eine dunkle Masse“",
     category: "Unfall und Schock",
     sourcePage: 48
   },
   {
     id: 34,
-    question: "Was passiert mit Tobias beim Zug?",
+    question: "Was geschieht mit Tobias, als der Zug ihn erfasst?",
     answer: "„unter den Zug geraten und … hin und her geworfen“",
     category: "Unfall und Schock",
     sourcePage: 48
   },
   {
     id: 35,
-    question: "Wie wird der Unfall beschrieben?",
+    question: "Wie schildert der Text die Geräuschkulisse des Unfalls?",
     answer: "„ein rasendes Tosen und Toben erfüllte den Raum“",
     category: "Unfall und Schock",
     sourcePage: 30
   },
   {
     id: 36,
-    question: "Wie reagiert Thiel körperlich nach dem Unfall?",
+    question: "Wie reagiert Thiel unmittelbar nach Tobias' Unfall körperlich?",
     answer: "„er musste sich festhalten, um nicht umzusinken“",
     category: "Unfall und Schock",
     sourcePage: 49
   },
   {
     id: 37,
-    question: "Wie wird Tobias’ Zustand beschrieben?",
+    question: "Wie beschreibt der Text den zerschmetterten Zustand von Tobias' Körper?",
     answer: "„nicht nur in den Gelenken gebrochen“",
     category: "Unfall und Schock",
     sourcePage: null
   },
   {
     id: 38,
-    question: "Wie wirken Tobias’ Gliedmaßen?",
+    question: "Wie wirken Tobias' Gliedmaßen nach dem Zugunglück?",
     answer: "„nahmen die unnatürlichsten Stellungen ein“",
     category: "Unfall und Schock",
     sourcePage: null
   },
   {
     id: 39,
-    question: "Was tut Thiel mit Tobias?",
+    question: "Was tut und spürt Thiel, als er Tobias nach dem Unfall aufnimmt?",
     answer: "„er fühlt die schlaffen, toten Gliedmaßen schwer in seinen Armen“",
     category: "Unfall und Schock",
     sourcePage: 50
   },
   {
     id: 40,
-    question: "Wie verhält sich Lene nach dem Unfall?",
+    question: "Wie reagiert Lene unmittelbar nach Tobias' Unfalltod?",
     answer: "„Lene gebärdet sich wie wahnsinnig“",
     category: "Unfall und Schock",
     sourcePage: 51
   },
   {
     id: 41,
-    question: "Wie reagiert Thiel sprachlich danach?",
+    question: "Wie verhält sich Thiel nach dem Unfall sprachlich?",
     answer: "„Thiel spricht nicht“",
     category: "Unfall und Schock",
     sourcePage: 50
   },
   {
     id: 42,
-    question: "Wie wirkt Thiel nach dem Unfall?",
+    question: "Wie wirkt Thiels Gesicht nach dem Unfall auf die Umstehenden?",
     answer: "„sein Gesicht ist … tot“",
     category: "Unfall und Schock",
     sourcePage: null
   },
   {
     id: 43,
-    question: "Was zeigt Thiels Zustand?",
+    question: "Welchen seelischen Zustand zeigt Thiel nach dem Unfall?",
     answer: "„wie abwesend“",
     category: "Unfall und Schock",
     sourcePage: 22
   },
   {
     id: 44,
-    question: "Welche Bedeutung hat Tobias’ Tod?",
+    question: "Welche Folgen haben die letzten Eindrücke von Tobias' Tod für Thiels weiteres Schicksal?",
     answer: "„die Eindrücke der letzten Stunden … besiegeln konnten“",
     category: "Unfall und Schock",
     sourcePage: null
   },
   {
     id: 45,
-    question: "Wie verändert sich Thiels Sicht auf Lene?",
+    question: "Welche Erinnerung bestimmt Thiels Blick auf Lene nach Tobias' Tod immer stärker?",
     answer: "„die Leidensgeschichte seines Ältesten“",
     category: "Rache und Wahnsinn",
     sourcePage: null
   },
   {
     id: 46,
-    question: "Was tut Thiel später mit Lene?",
+    question: "Was tut Thiel später im Zustand des Wahnsinns mit Lene?",
     answer: "„erschlug er seine Frau“",
     category: "Rache und Wahnsinn",
     sourcePage: null
   },
   {
     id: 47,
-    question: "Was geschieht mit dem Kind?",
+    question: "Was geschieht in Thiels Gewalttat auch mit dem gemeinsamen Kind?",
     answer: "„und das Kind“",
     category: "Rache und Wahnsinn",
     sourcePage: 63
   },
   {
     id: 48,
-    question: "Wo wird Thiel gefunden?",
+    question: "Wo findet man Thiel nach der Tat?",
     answer: "„im Wärterhäuschen“",
     category: "Rache und Wahnsinn",
     sourcePage: null
   },
   {
     id: 49,
-    question: "In welchem Zustand ist Thiel am Ende?",
+    question: "In welchem geistigen Zustand befindet sich Thiel am Ende der Novelle?",
     answer: "„wahnsinnig geworden“",
     category: "Rache und Wahnsinn",
     sourcePage: null
   },
   {
     id: 50,
-    question: "Was zeigt Thiels Ende?",
+    question: "Was zeigt Thiels Ende über den Zustand seines Geistes?",
     answer: "„sein Geist … verloren“",
     category: "Rache und Wahnsinn",
     sourcePage: null
