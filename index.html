@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bahnwärter Thiel Memory</title>
+  <meta
+    name="description"
+    content="Volldigitalisiertes Memory zu Gerhart Hauptmanns Bahnwärter Thiel mit 50 Frage-Antwort-Paaren, Quellenhinweisen und lokalem Mehrspielermodus."
+  />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <section class="hero panel">
+      <div class="hero-copy">
+        <p class="eyebrow">Volldigitalisiertes Memory</p>
+        <h1>Bahnwärter Thiel</h1>
+        <p class="lead">
+          Dieses Memory verbindet Fragen aus der Novelle mit den passenden Textzitaten.
+          Grundlage sind die bereitgestellten Dateien zur Primärquelle, zur vollständigen
+          Memory-Fassung und zum Mapping der Kartenpaare. Das Spiel funktioniert als
+          eigenständige Web-App und steht vollständig für sich.
+        </p>
+      </div>
+      <div class="hero-note">
+        <p class="note-kicker">Spielidee</p>
+        <p>
+          Finde jeweils eine <strong>Fragekarte</strong> und das passende <strong>Zitat</strong>.
+          Erfolgreiche Treffer bleiben offen, zählen als Punkt und erscheinen rechts mit
+          Themenbereich und, wenn automatisch auffindbar, Seitenhinweis zur Primärquelle.
+          Es gibt keine technische oder spielerische Verbindung zu anderen Projekten im Workspace.
+        </p>
+      </div>
+    </section>
+
+    <section class="setup-grid">
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Setup</p>
+            <h2>Partie vorbereiten</h2>
+          </div>
+          <p class="compact-copy">Solo oder lokal mit bis zu vier Spielenden.</p>
+        </div>
+
+        <div class="control-grid">
+          <label class="field">
+            <span>Spielende</span>
+            <select id="playerCount">
+              <option value="1">1</option>
+              <option value="2" selected>2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Kartenpaare</span>
+            <select id="pairCount">
+              <option value="6">6</option>
+              <option value="8">8</option>
+              <option value="10">10</option>
+              <option value="12" selected>12</option>
+              <option value="16">16</option>
+              <option value="20">20</option>
+              <option value="24">24</option>
+              <option value="32">32</option>
+              <option value="50">50</option>
+            </select>
+          </label>
+
+          <label class="field field-wide">
+            <span>Themendeck</span>
+            <select id="categorySelect"></select>
+          </label>
+        </div>
+
+        <div class="button-row">
+          <button id="startGameBtn" class="primary-btn" type="button">Neue Partie starten</button>
+          <button id="previewBtn" class="ghost-btn" type="button">8 Sekunden Lernblick</button>
+        </div>
+
+        <p id="setupHint" class="setup-hint">
+          Ausgewählt werden zufällige Paare aus dem gewählten Themenbereich.
+        </p>
+      </section>
+
+      <section class="panel status-panel">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Status</p>
+            <h2>Spielübersicht</h2>
+          </div>
+          <p class="compact-copy">Treffer, Züge und Genauigkeit werden live aktualisiert.</p>
+        </div>
+
+        <div id="scoreboard" class="scoreboard"></div>
+
+        <div class="stats-grid">
+          <article class="stat-card">
+            <span class="stat-label">Gefundene Paare</span>
+            <strong id="pairsFoundStat">0 / 0</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Versuche</span>
+            <strong id="attemptStat">0</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Trefferquote</span>
+            <strong id="accuracyStat">0 %</strong>
+          </article>
+        </div>
+
+        <div id="statusBanner" class="status-banner">
+          Starte eine Partie, um das Kartenraster zu mischen.
+        </div>
+      </section>
+    </section>
+
+    <section class="content-grid">
+      <section class="panel board-panel">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Spielfeld</p>
+            <h2>Frage trifft Zitat</h2>
+          </div>
+          <p id="deckMeta" class="compact-copy">Noch keine Partie aktiv.</p>
+        </div>
+
+        <div id="board" class="board empty-board" aria-live="polite"></div>
+      </section>
+
+      <aside class="side-stack">
+        <section class="panel detail-panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Zuletzt gefunden</p>
+              <h2>Trefferfenster</h2>
+            </div>
+          </div>
+          <div id="matchDetail" class="match-detail empty-detail">
+            Noch kein Paar gefunden.
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Chronik</p>
+              <h2>Letzte Paare</h2>
+            </div>
+          </div>
+          <div id="historyList" class="history-list">
+            <p class="muted">Sobald Treffer gelingen, erscheinen sie hier.</p>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Quellenbasis</p>
+              <h2>Verwendete Dateien</h2>
+            </div>
+          </div>
+          <div id="sourceList" class="source-list"></div>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <script src="./cards.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
