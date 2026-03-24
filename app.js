@@ -335,7 +335,6 @@
               <div class="card-face">
                 <div class="card-top">
                   <p class="card-badge">Bahnwärter Thiel</p>
-                  <span class="card-index">Nr. ${card.pairId}</span>
                 </div>
               </div>
             </article>
@@ -349,7 +348,6 @@
             <div class="card-face">
               <div class="card-top">
                 <p class="card-badge">${escapeHtml(card.label)}</p>
-                <span class="card-index">Nr. ${card.pairId}</span>
               </div>
               <p class="card-text">${escapeHtml(card.text)}</p>
               <div class="card-bottom">
@@ -468,7 +466,7 @@
       ? "Interpretations- und Theoriekarte"
       : card.sourcePage ? `Primärquelle: Seite ${card.sourcePage}` : "Primärquelle: keine sichere Seitenzuordnung";
     elements.zoomType.textContent = card.label;
-    elements.zoomTitle.textContent = `Nr. ${card.pairId}`;
+    elements.zoomTitle.textContent = card.category;
     elements.zoomMeta.textContent = `${card.category} · ${pageHint}${card.faceType === "answer" && card.answerFragment ? " · Kontext nötig" : ""}`;
     elements.zoomText.innerHTML = `
       <div class="zoom-main-text">${escapeHtml(card.text)}</div>

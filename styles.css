@@ -443,12 +443,6 @@ select {
   margin: 0;
 }
 
-.card-index {
-  font-size: 0.9rem;
-  font-weight: 800;
-  color: var(--muted);
-}
-
 .card-text {
   flex: 1;
   margin: 10px 0 12px;
